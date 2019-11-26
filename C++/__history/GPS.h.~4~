@@ -1,0 +1,17 @@
+#ifndef GPSH
+#define GPSH
+
+class GPS
+{
+	I16 ID_Card;
+
+	public :
+		PCI9111();
+		~PCI9111();
+
+		int Initialisation();
+		float Acquisition ();
+		void Ecriture(float tension);
+};
+
+#endif

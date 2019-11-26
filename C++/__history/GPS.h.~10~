@@ -1,0 +1,31 @@
+//---------------------------------------------------------------------------
+#ifndef GPSH
+#define GPSH
+
+#include <windows.h>
+#include <queue>
+class GPS
+{
+	HANDLE hCom;
+	DWORD written;
+	DWORD read;
+	char recvChar;
+	bool Vcontinue;
+	int isRead;
+	bool ignoreData;
+
+	std::deque<char> recvBuf;
+
+	public:
+	GPSS();
+	~GPS();
+	int ouvrirport();
+	void lireport();
+	void ecrireport(char *, int);
+	void fermerport();
+	int connectbdd();
+
+	std::deque<char> & getRecvBuf();
+};
+//---------------------------------------------------------------------------
+#endif
